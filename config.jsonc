@@ -1,0 +1,110 @@
+{
+    "logo": {
+      "padding": {
+        "top": 0,
+        "right": 3,
+        "left": 3
+      }
+    },
+
+    "display": {
+        "separator": ": "
+    },
+
+    "modules": [
+      {
+        "type": "custom",
+        "format": "┌───────────────────────────────────────────────────────────────────┐"
+      },
+      {
+        "type": "title",
+        "key": "  󰟷 User",
+        "keyColor": "blue"
+      },
+      {
+        "type": "os",
+        "key": "  󰀥 OS",
+        "keyColor": "blue"
+      },
+      {
+        "type": "kernel",
+        "key": "   Kernel",
+        "keyColor": "green"
+      },
+      {
+        "type": "packages",
+        "key": "  󰏗 Packages",
+        "keyColor": "green"
+      },
+      {
+        "type": "de",
+        "key": "  󱫐 DE ",
+        "keyColor": "yellow"
+      },
+      {
+        "type": "wm",
+        "key": "   WM",
+        "keyColor": "yellow"
+      },
+      {
+        "type": "theme",
+        "key": "   WM Theme",
+        "keyColor": "yellow"
+      },
+      {
+        "type": "shell",
+        "key": "  󰘳 Shell",
+        "keyColor": "red"
+      },
+      {
+        "type": "terminal",
+        "key": "   Terminal",
+        "keyColor": "red"
+      },
+      {
+        "type": "custom",
+        "format": "├───────────────────────────────────────────────────────────────────┤"
+      },
+      {
+          "type": "host",
+          "key": "   Host",
+          "format": "{name}{?vendor} ({vendor}){?}",
+          "keyColor": "yellow"
+      },
+      {
+        "type": "display",
+        "key": "  󰹑 Display",
+        "keyColor": "yellow"
+      },
+      {
+        "type": "cpu",
+        "key": "   CPU",
+        "keyColor": "blue"
+      },
+      {
+        "type": "gpu",
+        "key": "  󰋵 GPU",
+        "keyColor": "blue"
+      },
+      {
+        "type": "memory",
+        "key": "  󰀚 Memory",
+        "keyColor": "blue"
+      },
+      {
+        "type": "disk",
+        "key": "  󰀚 Disk",
+        "keyColor": "red"
+      },
+      {
+        "type": "localip",
+        "key": "  󰘳 Local IP",
+        "keyColor": "red"
+      },
+      {
+        "type": "custom",
+        "format": "└───────────────────────────────────────────────────────────────────┘"
+      },
+      "break"
+    ]
+}

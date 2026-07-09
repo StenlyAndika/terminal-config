@@ -1,0 +1,61 @@
+background-opacity = 0.95
+font-size = 10
+shell-integration-features = no-cursor,sudo,no-title
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 10
+maximize = true
+cursor-style=block
+mouse-scroll-multiplier = 2
+copy-on-select = clipboard
+adjust-cell-height=20%
+
+keybind = ctrl+right=next_tab
+keybind = ctrl+left=previous_tab
+keybind = super+ctrl+right=new_split:auto
+keybind = super+ctrl+delete=close_surface
+keybind = super+ctrl+right_bracket=goto_split:next
+keybind = super+ctrl+left_bracket=goto_split:previous
+
+# ANSI Color Palette
+
+# Black (ANSI 0) - Backgrounds, dim text
+palette = 0=#181a1f
+# Red (ANSI 1) - Errors, deleted files, failures
+palette = 1=#e86671
+# Green (ANSI 2) - Success, executables, additions
+palette = 2=#7bc275
+# Yellow (ANSI 3) - Warnings, modified files
+palette = 3=#d7ba7d
+# Blue (ANSI 4) - Directories, links, info
+palette = 4=#61afef
+# Magenta (ANSI 5) - Keywords, special values
+palette = 5=#c678dd
+# Cyan (ANSI 6) - Symlinks, prompts, highlights
+palette = 6=#56b6c2
+# White (ANSI 7) - Normal foreground
+palette = 7=#dcdfe4
+
+# Bright Black (ANSI 8) - Comments, disabled, subtle text
+palette = 8=#5c6370
+# Bright Red (ANSI 9) - Bright errors/emphasis
+palette = 9=#f7768e
+# Bright Green (ANSI 10) - Bright success
+palette = 10=#98c379
+# Bright Yellow (ANSI 11) - Bright warnings
+palette = 11=#e5c07b
+# Bright Blue (ANSI 12) - Bright directories
+palette = 12=#7dcfff
+# Bright Magenta (ANSI 13) - Bright accents
+palette = 13=#d2a8ff
+# Bright Cyan (ANSI 14) - Bright highlights
+palette = 14=#7fdbca
+# Bright White (ANSI 15) - Maximum brightness
+palette = 15=#ffffff
+
+# UI Colors
+background = #16181a
+foreground = #ffffff
+cursor-color = #ffffff
+selection-background = #3c4048
+selection-foreground = #ffffff
