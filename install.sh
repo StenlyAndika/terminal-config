@@ -13,7 +13,7 @@ echo "================================================="
 if ! command -v fastfetch >/dev/null 2>&1; then
     echo "Fastfetch not found. Installing..."
 
-    sudo dnf install fastfetch
+    sudo dnf install -y fastfetch
 else
     echo "Fastfetch already installed."
 fi
@@ -90,13 +90,13 @@ mkdir -p "$HOME/.config/fastfetch"
 mkdir -p "$HOME/.config/ghostty"
 mkdir -p "$HOME/.config/oh-my-posh"
 
-install -m 644 "$SCRIPT_DIR/config.jsonc" \
+install -m 644 "$SCRIPT_DIR/fastfetch.jsonc" \
     "$HOME/.config/fastfetch/config.jsonc"
 
-install -m 644 "$SCRIPT_DIR/config.ghostty" \
+install -m 644 "$SCRIPT_DIR/ghostty.conf" \
     "$HOME/.config/ghostty/config.ghostty"
 
-install -m 644 "$SCRIPT_DIR/overdrive.omp.json" \
+install -m 644 "$SCRIPT_DIR/oh-my-posh-overdrive.json" \
     "$HOME/.config/oh-my-posh/overdrive.omp.json"
 
 #--------------------------------------------------
