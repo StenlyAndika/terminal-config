@@ -19,10 +19,31 @@ Targets Fedora with GNOME. Requires `sudo` and `dnf`.
 ./install.sh
 ```
 
-Restart your terminal or `source ~/.bashrc`.
+Then apply the prompt to your current shell — no need to open a new terminal:
+
+```sh
+source ./install.sh
+```
+
+Or simply restart your terminal, or run `source ~/.bashrc`.
 
 The script is idempotent — safe to re-run. It checks for each package before
 installing and guards every `~/.bashrc` edit with a `grep -Fxq` check.
+
+### Applying to the current shell
+
+A script runs in its own process, so it **cannot** change the prompt of the
+shell that launched it. Three ways to apply, in order of convenience:
+
+| How | What happens |
+|-----|--------------|
+| `source ./install.sh` | Runs the whole installer inside your shell, then reloads `~/.bashrc` in place — prompt appears immediately |
+| `eval "$(./install.sh --apply)"` | Emits just the reload snippet; nothing is installed and no sudo is needed |
+| New terminal, or `source ~/.bashrc` | The classic route |
+
+`source` is safe: the script detects it was sourced and disables `set -e`
+(which would otherwise leak into your shell) and uses `return` instead of
+`exit` (which would otherwise close your terminal).
 
 ## What the installer does
 
@@ -37,6 +58,29 @@ installing and guards every `~/.bashrc` edit with a `grep -Fxq` check.
 Configs are **copied, not symlinked** — intentional, so edits to the deployed
 files stay live even if this repo moves. Re-running `install.sh` overwrites
 them. There is no uninstall step; the `~/.bashrc` edits are append-only.
+
+## Appearance
+
+| Setting | Value |
+|---------|-------|
+| `font-family` | `JetBrainsMono Nerd Font Mono` |
+| `font-size` | `10` |
+| `adjust-cell-height` | `20%` — looser line spacing |
+| `background` | `#23252e` |
+| `background-opacity` | `0.95` |
+| `foreground` | `#ffffff` |
+| `cursor-style` | `block` |
+| `window-decoration` | `true` |
+| `maximize` | `true` |
+| `mouse-scroll-multiplier` | `2` |
+| `copy-on-select` | `clipboard` — select-to-copy, no keybind |
+
+The font is pinned to the **Nerd Font** build on purpose. Fedora's plain
+`jetbrains-mono-fonts` package has none of the icon glyphs the prompt needs —
+only 11 of the 45 non-ASCII codepoints used across this repo. The patched
+`JetBrainsMono Nerd Font Mono` covers all 45. Same applies to any replacement:
+pick a Nerd Font, not a plain one, or the prompt and Fastfetch icons fall back
+to a different family and look mismatched.
 
 ## Theme
 
@@ -65,7 +109,8 @@ standard dark variant from `etc/xdg`.
 - Fedora (uses `dnf`, `rpm`, and `copr`)
 - GNOME (`gsettings` keys for the default terminal and Nautilus)
 - A [Nerd Font](https://www.nerdfonts.com/) for the prompt and Fastfetch
-  glyphs (Fira Code recommended — Kali's own choice)
+  glyphs. The config pins `font-family = JetBrainsMono Nerd Font Mono`;
+  change it to any installed Nerd Font if you prefer.
 
 ## License
 
